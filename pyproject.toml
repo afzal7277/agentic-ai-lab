@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-ai-lab"
+version = "0.1.0"
+description = "Hands-on Agentic AI projects"
+requires-python = ">=3.14"
+
+[tool.setuptools]
+py-modules = ["config"]
+
+[tool.setuptools.packages.find]
+include = ["llm*"]
