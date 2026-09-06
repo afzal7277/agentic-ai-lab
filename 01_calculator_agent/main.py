@@ -3,7 +3,8 @@ from agent import ask_agent
 
 def main():
     response = ask_agent(
-        "Explain what an AI agent is in one simple sentence."
+        "We sold 125 units at ₹1499 each. "
+        "Calculate the total revenue using the calculator tool."
     )
 
     print(response)
