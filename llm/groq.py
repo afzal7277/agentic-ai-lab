@@ -9,7 +9,7 @@ class GroqProvider(LLMProvider):
     def __init__(self):
         self.client = Groq(api_key=GROQ_API_KEY)
 
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, tools=None) -> str:
         response = self.client.chat.completions.create(
             model="openai/gpt-oss-120b",
             messages=[

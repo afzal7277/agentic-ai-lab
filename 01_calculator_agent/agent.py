@@ -1,8 +1,12 @@
-from llm.gemini import GeminiProvider
+from llm.router import LLMRouter
+from tools import calculate
 
 
-llm = GeminiProvider()
+llm = LLMRouter()
 
 
 def ask_agent(prompt: str) -> str:
-    return llm.generate(prompt)
+    return llm.generate(
+        prompt,
+        tools=[calculate],
+    )
