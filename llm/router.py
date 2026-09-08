@@ -4,14 +4,18 @@ from .groq import GroqProvider
 
 class LLMRouter:
 
-    def __init__(self):
+    def __init__(self, force_gemini_failure=False):
         self.gemini = GeminiProvider()
         self.groq = GroqProvider()
+        self.force_gemini_failure = force_gemini_failure
 
     def generate(self, prompt: str, tools=None) -> str:
 
         try:
             print("Using Gemini...")
+
+            if self.force_gemini_failure:
+                raise RuntimeError("Intentional Gemini failure for fallback testing")
 
             return self.gemini.generate(
                 prompt,
